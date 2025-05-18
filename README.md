@@ -19,11 +19,17 @@ Ce projet est une application fullstack construite avec **Symfony (backend)** et
 
 Assurez-vous d'avoir **Docker** et **Docker Compose** installés.
 
+``` 
+1. git clone https://github.com/MFElAifa/Kata.git
+2. cd Kata/
+```
+
 ```back
 docker-compose up --build
 ```
 
-```front
+``` Front
+cd kata-front
 npm install
 npm run dev
 ```
