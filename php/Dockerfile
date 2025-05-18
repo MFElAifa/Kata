@@ -14,3 +14,9 @@ RUN curl -sS https://get.symfony.com/cli/installer | bash && \
     mv /root/.symfony*/bin/symfony /usr/local/bin/symfony
 
 WORKDIR /var/www/html
+
+# Copy app source into the container
+COPY ./kata-back/ /var/www/html/
+
+# Install PHP dependencies
+RUN composer install --no-interaction --no-scripts --prefer-dist
