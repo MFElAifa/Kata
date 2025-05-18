@@ -23,6 +23,10 @@ final class Version20250517170500 extends AbstractMigration
         $this->addSql(<<<'SQL'
             ALTER TABLE question ADD created_at DATETIME NOT NULL COMMENT '(DC2Type:datetime_immutable)', ADD updated_at DATETIME NOT NULL COMMENT '(DC2Type:datetime_immutable)'
         SQL);
+
+        $this->addSql(<<<'SQL'
+            INSERT INTO question (name, created_at, updated_at) VALUES ('Would you recommend our service to others?', NOW(), NOW())
+        SQL);
     }
 
     public function down(Schema $schema): void
