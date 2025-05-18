@@ -28,7 +28,7 @@ export default function Survey() {
           return updated;
         });
     };
-
+    const API_URL = import.meta.env.VITE_API_URL;
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -40,7 +40,7 @@ export default function Survey() {
         console.log(payload);
 
         try {
-          const res = await fetch('http://localhost:8000/api/survey', {
+          const res = await fetch(`${API_URL}/survey`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)

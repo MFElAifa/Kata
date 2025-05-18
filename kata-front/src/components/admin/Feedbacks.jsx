@@ -14,8 +14,9 @@ const Feedbacks = () => {
       }
     }, [isAdmin, navigate]
   );
+  const API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
-    fetch('http://localhost:8000/api/feedbacks', {
+    fetch(`${API_URL}/feedbacks`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       })

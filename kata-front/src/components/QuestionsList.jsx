@@ -3,9 +3,10 @@ import Question from './Question';
 
 const QuestionsList = ({onResponseChange, onLoaded }) => {
   const [questions, setQuestions] = useState([]);
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/questions', {
+    fetch(`${API_URL}/questions`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       })

@@ -37,7 +37,7 @@ export default function FeedbackForm() {
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
-
+    const API_URL = import.meta.env.VITE_API_URL;
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -45,7 +45,7 @@ export default function FeedbackForm() {
             return;
         }
         try {
-          const res = await fetch("http://localhost:8000/api/feedback", {
+          const res = await fetch(`${API_URL}/feedback`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),

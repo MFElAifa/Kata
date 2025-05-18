@@ -8,7 +8,8 @@ const Surveys = () => {
   const [loading, setLoading] = useState(true);
   const { isAdmin } = useAuth();
   const navigate = useNavigate();
-  
+  const API_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
       if (!isAdmin) {
         navigate("/");
@@ -17,7 +18,7 @@ const Surveys = () => {
   );
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/surveys', {
+    fetch(`${API_URL}/surveys`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       })

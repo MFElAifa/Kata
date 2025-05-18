@@ -18,10 +18,10 @@ const Questions = () => {
         }
       }, [isAdmin, navigate]
     );
-
+    const API_URL = import.meta.env.VITE_API_URL;
     const fetchQuestions = () => {
         setLoading(true);
-        fetch('http://localhost:8000/api/questions', {
+        fetch(`${API_URL}/questions`, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
@@ -43,7 +43,7 @@ const Questions = () => {
     const handleDelete = (id) => {
         if (!window.confirm("Delete this question ?")) return;
       
-        fetch(`http://localhost:8000/api/question/${id}`, {
+        fetch(`${API_URL}/question/${id}`, {
           method: 'DELETE',
         }).then(() => fetchQuestions());
     };
@@ -62,7 +62,7 @@ const Questions = () => {
                 }}
                 onSubmit={(value) => {
                     const method = formMode === 'edit' ? 'PUT' : 'POST';
-                    const url = formMode === 'edit' ? `http://localhost:8000/api/question/${editId}` : `http://localhost:8000/api/question`;
+                    const url = formMode === 'edit' ? `${API_URL}/question/${editId}` : `${API_URL}/question`;
 
                     fetch(url, {
                         method,
