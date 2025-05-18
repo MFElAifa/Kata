@@ -25,7 +25,7 @@ Assurez-vous d'avoir **Docker** et **Docker Compose** installés.
 ```
 
 ```back
-docker-compose up --build
+docker-compose up --build -d
 ```
 
 ``` Front
