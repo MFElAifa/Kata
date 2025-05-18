@@ -3,7 +3,8 @@ version: '3.8'
 services:
   php:
     build:
-      context: ./php
+      context: .
+      dockerfile: ./php/Dockerfile
     container_name: kata_php
     volumes:
       - ./kata-back:/var/www/html
