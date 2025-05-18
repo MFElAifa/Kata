@@ -26,6 +26,8 @@ Assurez-vous d'avoir **Docker** et **Docker Compose** installés.
 
 ```back
 docker-compose up --build -d
+docker exec -it kata_php composer install
+docker exec -it kata_php php bin/console d:m:m
 ```
 
 ``` Front
@@ -59,6 +61,6 @@ Mot de passe : admin
 Côté backend, des tests unitaires sont définis avec PHPUnit. Lancez-les avec :
 
 ```bash
-docker exec -it <php_container> php bin/phpunit
+docker exec -it kata_php php bin/phpunit
 ```
 
