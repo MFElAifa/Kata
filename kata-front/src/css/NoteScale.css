@@ -1,0 +1,39 @@
+.rating-scale {
+    margin: 1rem 0;
+    text-align: center;
+}
+  
+.scale-label {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+  
+  .scale-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .scale-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background: #f0f0f0;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .scale-button:hover {
+    background: #e0e0e0;
+  }
+  
+  .scale-button.selected {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  

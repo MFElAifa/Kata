@@ -1,0 +1,31 @@
+  .main-header {
+    padding: 1rem 2rem;
+    background-color: #808080;
+    color: white;
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .nav-left, .nav-right {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-link.active {
+    text-decoration: underline;
+  }
+  
+  .btn.btn-light {
+    font-weight: bold;
+    margin: 0 0 0 5rem;
+  }
